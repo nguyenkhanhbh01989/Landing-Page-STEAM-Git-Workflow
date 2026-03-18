@@ -1,6 +1,7 @@
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Course from './components/Course/Course'
+import Gallery from './components/Gallery/Gallery'
 import Testimonial from './components/Testimonial/Testimonial'
 import RegisterForm from './components/RegisterForm/RegisterForm'
 import Footer from './components/Footer/Footer'
@@ -13,6 +14,7 @@ function App() {
       <main className="main-content">
         <Hero />
         <Course />
+        <Gallery />
         <Testimonial />
         <RegisterForm />
       </main>
