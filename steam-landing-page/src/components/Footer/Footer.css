@@ -1,7 +1,20 @@
 .footer-section {
-  background-color: var(--color-gray-900);
+  background-color: #1a1a2e;
   color: var(--color-gray-100);
   padding: 5rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative top wave gradient */
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--kid-yellow), var(--kid-orange), var(--steam-engineering), var(--kid-green));
 }
 
 .footer-container {
@@ -18,28 +31,36 @@
 
 .footer-info .footer-logo {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--color-white);
   letter-spacing: -0.5px;
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-info .logo-steam {
-  background: linear-gradient(135deg, var(--steam-science), var(--steam-tech), var(--steam-art));
+  background: linear-gradient(135deg, var(--kid-yellow), var(--kid-orange), var(--steam-engineering));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.footer-logo-emoji {
+  font-size: 1.6rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
 .footer-desc {
   font-size: 1rem;
   color: #9ca3af;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .footer-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-white);
   margin-bottom: 1.5rem;
   position: relative;
@@ -53,8 +74,9 @@
   bottom: 0;
   left: 0;
   width: 40px;
-  height: 2px;
-  background-color: var(--steam-tech);
+  height: 3px;
+  background: linear-gradient(90deg, var(--kid-yellow), var(--kid-orange));
+  border-radius: var(--radius-pill);
 }
 
 .footer-links ul {
@@ -66,10 +88,11 @@
 .footer-links a {
   color: #9ca3af;
   transition: color 0.3s ease, padding-left 0.3s ease;
+  font-weight: 600;
 }
 
 .footer-links a:hover {
-  color: var(--steam-science);
+  color: var(--kid-yellow);
   padding-left: 0.5rem;
 }
 
@@ -80,31 +103,34 @@
 }
 
 .social-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xl);
+  background-color: rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-white);
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .social-btn:hover {
-  background-color: var(--steam-tech);
+  background: linear-gradient(135deg, var(--kid-yellow), var(--kid-orange));
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+  box-shadow: 0 6px 18px rgba(255, 184, 0, 0.3);
+  animation: bouncy 0.5s ease;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   color: #6b7280;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* Responsive */

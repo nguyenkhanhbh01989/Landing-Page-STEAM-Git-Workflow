@@ -4,21 +4,21 @@ const Course = () => {
   const courses = [
     {
       id: 1,
-      title: 'Lập Trình Scratch',
+      title: '🎮 Lập Trình Scratch',
       description: 'Khám phá tư duy lập trình cơ bản qua các khối lệnh sinh động, tạo ra game và hoạt ảnh thú vị đầu tay của chính bạn.',
-      icon: '🎮',
+      icon: '🧩',
       color: 'var(--steam-art)'
     },
     {
       id: 2,
-      title: 'Lập Trình Web Cơ Bản',
+      title: '🌐 Lập Trình Web',
       description: 'Xây dựng website thực tế với HTML, CSS và JavaScript. Nắm bắt các phương pháp thiết kế Web hiện đại và chuẩn Responsive.',
-      icon: '🌐',
+      icon: '💻',
       color: 'var(--steam-tech)'
     },
     {
       id: 3,
-      title: 'Thiết Kế Game 3D',
+      title: '🤖 Thiết Kế Game 3D',
       description: 'Học cách xây dựng thế giới ảo, lập trình logic và phát triển trò chơi 3D hoàn chỉnh cùng với đa dạng các nền tảng Engine.',
       icon: '🎲',
       color: 'var(--steam-science)'
@@ -29,8 +29,10 @@ const Course = () => {
     <section className="course-section" id="courses">
       <div className="course-container">
         <div className="course-header">
-          <h2 className="course-heading">Các Khóa Học Nổi Bật</h2>
-          <p className="course-subheading">Lộ trình học tập cá nhân hóa giúp đánh thức tiềm năng sáng tạo và trang bị kỹ năng công nghệ tương lai.</p>
+          <h2 className="course-heading">
+            <span className="course-heading-emoji">🌟</span> Các Khóa Học Nổi Bật
+          </h2>
+          <p className="course-subheading">Lộ trình học tập cá nhân hóa giúp đánh thức tiềm năng sáng tạo và trang bị kỹ năng công nghệ tương lai. 🚀</p>
         </div>
         
         <div className="course-grid">

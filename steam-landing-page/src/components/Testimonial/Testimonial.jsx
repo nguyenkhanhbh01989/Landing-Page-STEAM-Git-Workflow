@@ -4,16 +4,16 @@ const Testimonial = () => {
   const testimonials = [
     {
       id: 1,
-      content: "Nhờ khóa học Web cơ bản, con đã có thể tự tay làm ra một trang web giới thiệu bản thân và chia sẻ sở thích. Các thầy cô hướng dẫn rất tận tình và dễ hiểu.",
+      content: "Nhờ khóa học Web cơ bản, con đã có thể tự tay làm ra một trang web giới thiệu bản thân và chia sẻ sở thích. Các thầy cô hướng dẫn rất tận tình và dễ hiểu. 🌟",
       name: "Nguyễn Minh Khang",
-      role: "Học viên lớp Web",
+      role: "Học viên lớp Web 🌐",
       avatar: "MK"
     },
     {
       id: 2,
-      content: "Chưa bao giờ em nghĩ lập trình game lại thú vị đến thế! Hiện tại em đã hoàn thiện được trò chơi phiêu lưu đầu tay trên Scratch và chia sẻ cho cả lớp cùng tham gia.",
+      content: "Chưa bao giờ em nghĩ lập trình game lại thú vị đến thế! Hiện tại em đã hoàn thiện được trò chơi phiêu lưu đầu tay trên Scratch và chia sẻ cho cả lớp cùng tham gia. 🎮",
       name: "Trần Hà My",
-      role: "Học viên lớp Scratch",
+      role: "Học viên lớp Scratch 🧩",
       avatar: "HM"
     }
   ]
@@ -21,7 +21,9 @@ const Testimonial = () => {
   return (
     <section className="testimonial-section" id="reviews">
       <div className="testimonial-container">
-        <h2 className="testimonial-heading">Cảm nhận từ Học viên</h2>
+        <h2 className="testimonial-heading">
+          <span className="testimonial-heading-emoji">⭐</span> Cảm nhận từ Học viên
+        </h2>
         <div className="testimonial-flex">
           {testimonials.map(testimonial => (
             <div className="testimonial-card" key={testimonial.id}>
