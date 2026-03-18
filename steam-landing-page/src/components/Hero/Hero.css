@@ -219,14 +219,44 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.25rem;
+    min-height: auto;
+  }
+
+  .hero-container {
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .hero-actions {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
   }
-  
-  .hero-title {
-    font-size: 2.25rem;
+
+  .btn-cta, .btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
   }
+
+  .hero-image-wrapper {
+    max-width: 350px;
+    aspect-ratio: 1 / 0.85;
+  }
+
+  .shape-1 { width: 180px; height: 180px; }
+  .shape-2 { width: 150px; height: 150px; }
+  .shape-3 { width: 120px; height: 120px; }
 }
