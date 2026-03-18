@@ -147,17 +147,30 @@
 }
 
 @media (max-width: 768px) {
+  .course-section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .course-header {
+    margin-bottom: 3rem;
+  }
+
+  .course-heading {
+    font-size: 1.75rem;
+  }
+
+  .course-subheading {
+    font-size: 1rem;
+  }
+
   .course-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
     margin: 0 auto;
+    gap: 1.5rem;
   }
-  
-  .course-heading {
-    font-size: 2rem;
-  }
-  
-  .course-section {
-    padding: 4rem 2rem;
+
+  .course-card {
+    padding: 2rem 1.5rem;
   }
 }
