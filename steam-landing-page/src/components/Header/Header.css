@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-md);
+  background-color: rgba(255, 253, 247, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(255, 184, 0, 0.12);
   z-index: 1000;
   transition: var(--transition-normal);
 }
@@ -13,22 +13,30 @@
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.75rem;
-  font-weight: 800;
+  font-size: 1.85rem;
+  font-weight: 900;
   color: var(--text-primary);
   letter-spacing: -0.5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.logo-emoji {
+  font-size: 1.6rem;
+  animation: wiggle 2s ease-in-out infinite;
 }
 
 .logo-steam {
-  background: linear-gradient(135deg, var(--steam-science), var(--steam-tech), var(--steam-art));
+  background: linear-gradient(135deg, var(--kid-yellow), var(--kid-orange), var(--steam-engineering));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,31 +53,35 @@
 }
 
 .nav-link {
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-secondary);
   font-size: 1rem;
-  transition: var(--transition-fast);
+  transition: all var(--transition-fast);
   position: relative;
-  padding-bottom: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--steam-tech);
+  color: var(--kid-orange);
+  background-color: rgba(255, 107, 53, 0.08);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
-  height: 2px;
-  background-color: var(--steam-tech);
+  height: 3px;
+  background: linear-gradient(90deg, var(--kid-yellow), var(--kid-orange));
+  border-radius: var(--radius-pill);
   transition: width var(--transition-fast);
 }
 
 .nav-link:hover::after, .nav-link.active::after {
-  width: 100%;
+  width: 60%;
 }
 
 /* Hamburger Button (hidden on desktop) */
@@ -88,7 +100,7 @@
 .hamburger .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--text-primary);
+  background-color: var(--kid-orange);
   border-radius: 3px;
   transition: all 0.3s ease;
 }
@@ -122,8 +134,8 @@
     width: 70%;
     max-width: 300px;
     height: 100vh;
-    background-color: var(--color-white);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-main);
+    box-shadow: -5px 0 20px rgba(255, 184, 0, 0.15);
     transition: right 0.3s ease;
     padding-top: 5rem;
     z-index: 1050;
@@ -147,6 +159,7 @@
     display: block;
     padding: 1.25rem 2rem;
     font-size: 1.05rem;
+    border-radius: 0;
   }
 
   .nav-link::after {

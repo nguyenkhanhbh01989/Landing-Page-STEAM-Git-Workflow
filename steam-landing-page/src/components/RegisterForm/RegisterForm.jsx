@@ -16,8 +16,7 @@ const RegisterForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submission data:', formData)
-    alert('Đăng ký thành công! Đội ngũ tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất.')
-    // Reset form after submit
+    alert('🎉 Đăng ký thành công! Đội ngũ tư vấn sẽ liên hệ với bạn trong thời gian sớm nhất.')
     setFormData({ fullName: '', email: '', phone: '' })
   }
 
@@ -29,10 +28,10 @@ const RegisterForm = () => {
           {/* Cột trái: Nội dung & Minh họa */}
           <div className="register-info">
             <h2 className="register-heading">
-              Bắt Đầu Hành Trình <br/> 
+              🎓 Bắt Đầu Hành Trình <br/> 
               <span className="highlight-text">STEAM</span> Cùng Chúng Tôi
             </h2>
-            <p className="register-desc">Để lại thông tin để nhận lộ trình học cá nhân hóa phù hợp nhất cho tương lai của bạn. Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ 24/7.</p>
+            <p className="register-desc">Để lại thông tin để nhận lộ trình học cá nhân hóa phù hợp nhất cho tương lai của bạn. Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ 24/7. ✨</p>
             
             <div className="contact-details">
               <div className="contact-item">
@@ -52,7 +51,7 @@ const RegisterForm = () => {
           
           {/* Cột phải: Form */}
           <div className="register-form-container">
-            <h3 className="form-title">Đăng Ký Tư Vấn</h3>
+            <h3 className="form-title">📝 Đăng Ký Tư Vấn</h3>
             <form onSubmit={handleSubmit} className="register-form">
               <div className="form-group">
                 <label htmlFor="fullName" className="form-label">Họ và tên</label>
@@ -98,7 +97,7 @@ const RegisterForm = () => {
                 />
               </div>
               
-              <button type="submit" className="form-submit-btn">Đăng Ký Ngay</button>
+              <button type="submit" className="form-submit-btn">🚀 Đăng Ký Ngay</button>
             </form>
           </div>
         </div>

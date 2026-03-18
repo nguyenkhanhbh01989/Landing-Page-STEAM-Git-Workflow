@@ -16,10 +16,15 @@
 
 .course-heading {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--text-primary);
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
+}
+
+.course-heading-emoji {
+  display: inline-block;
+  animation: sparkle 2s ease-in-out infinite;
 }
 
 .course-subheading {
@@ -27,7 +32,7 @@
   color: var(--text-secondary);
   max-width: 650px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .course-grid {
@@ -39,22 +44,24 @@
 /* --- Card UI --- */
 .course-card {
   background-color: var(--color-white);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: 2.5rem 2rem;
-  border: 1px solid var(--color-gray-200);
+  border: 2px solid rgba(255, 184, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Hover Effect */
+/* Hover Effect – Bouncy */
 .course-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
-  border-color: transparent;
+  box-shadow: 0 20px 40px -10px rgba(255, 184, 0, 0.15);
+  border-color: var(--kid-yellow);
+  animation: bouncy 0.5s ease;
 }
 
 /* Gradient line top on hover */
@@ -65,11 +72,12 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--steam-science), var(--steam-tech), var(--steam-art));
+  background: linear-gradient(90deg, var(--kid-yellow), var(--kid-orange), var(--steam-engineering));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
   z-index: 2;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 .course-card:hover::before {
@@ -80,7 +88,7 @@
 .course-icon-wrapper {
   width: 70px;
   height: 70px;
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,7 +97,8 @@
 }
 
 .course-card:hover .course-icon-wrapper {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.15) rotate(8deg);
+  animation: wiggle 0.6s ease;
 }
 
 .course-icon {
@@ -98,38 +107,41 @@
 
 .course-title {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
 .course-desc {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2.5rem;
   flex-grow: 1;
 }
 
 /* --- Card Button --- */
 .course-btn {
-  background: transparent;
+  background: linear-gradient(135deg, var(--kid-yellow), var(--kid-orange));
   border: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--steam-tech);
-  font-weight: 600;
-  font-size: 1rem;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.95rem;
   cursor: pointer;
-  padding: 0;
-  transition: gap 0.3s ease, color 0.3s ease;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-xl);
+  transition: all 0.3s ease;
   margin-top: auto;
   align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(255, 184, 0, 0.25);
 }
 
 .course-btn:hover {
   gap: 0.875rem;
-  color: var(--steam-art);
+  box-shadow: 0 6px 18px rgba(255, 184, 0, 0.35);
+  animation: bouncy 0.5s ease;
 }
 
 /* Responsive */
