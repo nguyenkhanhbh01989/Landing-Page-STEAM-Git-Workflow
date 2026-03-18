@@ -7,11 +7,15 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   width: 100%;
   height: 100%;
-  font-family: 'Inter', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
+  font-family: 'Nunito', 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,45 +39,82 @@ ul, ol {
 }
 
 /* =========================================
-   CSS Variables for STEAM Theme
+   CSS Variables – Kid-Friendly STEAM Theme
    ========================================= */
 :root {
-  /* Primary Colors */
-  --steam-science: #00B4D8;
-  --steam-tech: #4361EE;
-  --steam-engineering: #F72585;
-  --steam-art: #7209B7;
-  --steam-math: #4CC9F0;
+  /* STEAM Primary – Bright & Playful */
+  --steam-science: #00B4D8;      /* Sky blue */
+  --steam-tech: #4361EE;         /* Vivid blue */
+  --steam-engineering: #F72585;  /* Hot pink */
+  --steam-art: #7209B7;          /* Purple */
+  --steam-math: #4CC9F0;         /* Light cyan */
+
+  /* Kid-Friendly Accent Colors */
+  --kid-yellow: #FFB800;         /* Sunny yellow */
+  --kid-orange: #FF6B35;         /* Bright orange */
+  --kid-green: #06D6A0;          /* Mint green */
+  --kid-coral: #FF6B6B;          /* Soft coral */
 
   /* Neutrals */
   --color-white: #FFFFFF;
-  --color-gray-50: #F9FAFB;
+  --color-gray-50: #FFF9F0;      /* Warm cream tint */
   --color-gray-100: #F3F4F6;
   --color-gray-200: #E5E7EB;
   --color-gray-800: #1F2937;
   --color-gray-900: #111827;
 
   /* Typography */
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-800);
+  --text-primary: #2D3436;
+  --text-secondary: #636E72;
   --text-light: var(--color-gray-100);
 
   /* Backgrounds */
-  --bg-main: var(--color-white);
-  --bg-secondary: var(--color-gray-50);
+  --bg-main: #FFFDF7;           /* Warm creamy white */
+  --bg-secondary: #FFF5E6;      /* Soft peach tint */
 
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
-  /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
+
+  /* Shadows – softer and warmer */
+  --shadow-sm: 0 2px 8px rgba(255, 184, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(255, 184, 0, 0.08);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(255, 107, 53, 0.06);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(255, 184, 0, 0.06);
+
+  /* Border Radius – rounder for kids */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 20px;
   --radius-pill: 9999px;
+}
+
+/* =========================================
+   Global Animations – Bouncy & Playful
+   ========================================= */
+@keyframes bouncy {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-8px); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(3deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.4); }
+  50%      { box-shadow: 0 0 0 12px rgba(255, 184, 0, 0); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.15); }
 }
