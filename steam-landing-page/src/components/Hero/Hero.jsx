@@ -32,8 +32,8 @@ const Hero = () => {
             Hành trình đánh thức tiềm năng sáng tạo và tư duy logic của bạn thông qua các khóa học Khoa học, Công nghệ, Kỹ thuật, Nghệ thuật và Toán học mang tính ứng dụng cao. 🎨✨
           </p>
           <div className="hero-actions">
-            <button className="btn-cta">🚀 Đăng Ký Ngay</button>
-            <button className="btn-outline">📖 Tìm Hiểu Thêm</button>
+            <a href="#register-form" className="btn-cta">🚀 Đăng Ký Ngay</a>
+            <a href="#courses" className="btn-outline">📖 Tìm Hiểu Thêm</a>
           </div>
         </div>
 

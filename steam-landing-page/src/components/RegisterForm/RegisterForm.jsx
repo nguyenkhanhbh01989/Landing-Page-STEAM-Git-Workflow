@@ -21,7 +21,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <section className="register-section" id="contact">
+    <section className="register-section" id="register-form">
       <div className="register-container">
         <div className="register-wrapper">
           
