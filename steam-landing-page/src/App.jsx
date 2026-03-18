@@ -3,6 +3,7 @@ import Hero from './components/Hero/Hero'
 import Course from './components/Course/Course'
 import Testimonial from './components/Testimonial/Testimonial'
 import RegisterForm from './components/RegisterForm/RegisterForm'
+import Footer from './components/Footer/Footer'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Testimonial />
         <RegisterForm />
       </main>
+      <Footer />
     </div>
   )
 }
