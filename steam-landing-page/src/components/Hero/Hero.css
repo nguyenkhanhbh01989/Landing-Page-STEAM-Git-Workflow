@@ -44,7 +44,9 @@
   z-index: 1;
 }
 
-/* --- Text Content (Left Column) --- */
+/* ===========================================
+   Text Content (Left Column)
+   =========================================== */
 .hero-content {
   opacity: 0;
   animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -57,6 +59,20 @@
   line-height: 1.2;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
+}
+
+/* Typewriter cursor */
+.cursor-blink {
+  display: inline-block;
+  color: var(--kid-orange);
+  font-weight: 300;
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
 }
 
 .hero-emoji {
@@ -84,7 +100,9 @@
   gap: 1rem;
 }
 
-/* --- Button Styling --- */
+/* ===========================================
+   Button Styling
+   =========================================== */
 .btn-cta, .btn-outline {
   padding: 0.95rem 2.25rem;
   font-size: 1.1rem;
@@ -121,136 +139,179 @@
   animation: bouncy 0.5s ease;
 }
 
-/* --- Image Placeholder (Right Column) --- */
-.hero-image-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+/* ===========================================
+   3D Cube Section (Right Column)
+   =========================================== */
+.hero-3d-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  min-height: 420px;
+  perspective: 1000px;
   opacity: 0;
   animation: fadeInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
 }
 
-.hero-placeholder {
-  width: 90%;
-  height: 90%;
-  border-radius: var(--radius-xl);
-  position: relative;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 184, 0, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(255, 184, 0, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.placeholder-content {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--kid-orange);
-  z-index: 20;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 1rem 2rem;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-}
-
-/* Abstract shapes behind the glass */
-.placeholder-shape {
+/* Pulsing Glow behind the cube */
+.cube-glow {
   position: absolute;
-  filter: blur(40px);
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  z-index: 1;
-  animation: float 8s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.25) 0%, rgba(255, 107, 53, 0.1) 40%, transparent 70%);
+  animation: pulseGlow 3s ease-in-out infinite, heroFloat 6s ease-in-out infinite;
+  z-index: 0;
+  filter: blur(10px);
 }
 
-.shape-1 {
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 184, 0, 0.5);
-  top: -10%;
-  left: -10%;
-}
-
-.shape-2 {
-  width: 250px;
-  height: 250px;
-  background: rgba(255, 107, 53, 0.4);
-  bottom: -5%;
-  right: -5%;
-  animation-delay: -3s;
-}
-
-.shape-3 {
-  width: 200px;
-  height: 200px;
-  background: rgba(6, 214, 160, 0.4);
-  top: 40%;
-  left: 30%;
-  animation-delay: -5s;
-}
-
-/* --- Animations --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 40px 15px rgba(255, 184, 0, 0.2),
+                0 0 80px 30px rgba(255, 107, 53, 0.1);
   }
-  to {
+  50% {
+    transform: scale(1.2);
     opacity: 1;
-    transform: translateY(0);
+    box-shadow: 0 0 60px 25px rgba(255, 184, 0, 0.35),
+                0 0 120px 50px rgba(255, 107, 53, 0.15);
   }
+}
+
+/* Floating container for the cube */
+.cube-container {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  z-index: 1;
+  animation: heroFloat 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Floating animation */
+@keyframes heroFloat {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* The 3D Cube */
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 12s linear infinite;
+}
+
+@keyframes rotateCube {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Individual cube faces */
+.cube-face {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  backface-visibility: visible;
+}
+
+.face-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+.face-label {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Face colors */
+.cube-face.front {
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.85), rgba(0, 180, 216, 0.6));
+  transform: translateZ(110px);
+}
+
+.cube-face.back {
+  background: linear-gradient(135deg, rgba(114, 9, 183, 0.85), rgba(114, 9, 183, 0.6));
+  transform: rotateY(180deg) translateZ(110px);
+}
+
+.cube-face.right {
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.85), rgba(67, 97, 238, 0.6));
+  transform: rotateY(90deg) translateZ(110px);
+}
+
+.cube-face.left {
+  background: linear-gradient(135deg, rgba(247, 37, 133, 0.85), rgba(247, 37, 133, 0.6));
+  transform: rotateY(-90deg) translateZ(110px);
+}
+
+.cube-face.top {
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.85), rgba(255, 107, 53, 0.6));
+  transform: rotateX(90deg) translateZ(110px);
+}
+
+.cube-face.bottom {
+  background: linear-gradient(135deg, rgba(6, 214, 160, 0.85), rgba(76, 201, 240, 0.6));
+  transform: rotateX(-90deg) translateZ(110px);
+}
+
+/* ===========================================
+   Animations
+   =========================================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-/* Responsive */
+/* ===========================================
+   Responsive
+   =========================================== */
 @media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
   }
-  
+
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .hero-title {
     font-size: 2.75rem;
   }
-  
+
   .hero-description {
     max-width: 600px;
   }
-  
-  .hero-image-wrapper {
-    max-width: 500px;
-    margin: 0 auto;
+
+  .hero-3d-wrapper {
+    min-height: 320px;
   }
 }
 
@@ -286,12 +347,34 @@
     width: 100%;
   }
 
-  .hero-image-wrapper {
-    max-width: 350px;
-    aspect-ratio: 1 / 0.85;
+  .cube-container,
+  .cube-face {
+    width: 170px;
+    height: 170px;
   }
 
-  .shape-1 { width: 180px; height: 180px; }
-  .shape-2 { width: 150px; height: 150px; }
-  .shape-3 { width: 120px; height: 120px; }
+  .cube-face.front  { transform: translateZ(85px); }
+  .cube-face.back   { transform: rotateY(180deg) translateZ(85px); }
+  .cube-face.right  { transform: rotateY(90deg) translateZ(85px); }
+  .cube-face.left   { transform: rotateY(-90deg) translateZ(85px); }
+  .cube-face.top    { transform: rotateX(90deg) translateZ(85px); }
+  .cube-face.bottom { transform: rotateX(-90deg) translateZ(85px); }
+
+  .face-icon {
+    font-size: 2.75rem;
+  }
+
+  .face-label {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .cube-glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-3d-wrapper {
+    min-height: 260px;
+  }
 }
