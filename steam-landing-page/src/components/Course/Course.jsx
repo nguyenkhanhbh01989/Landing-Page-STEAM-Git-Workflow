@@ -6,22 +6,25 @@ const Course = () => {
       id: 1,
       title: '🎮 Lập Trình Scratch',
       description: 'Khám phá tư duy lập trình cơ bản qua các khối lệnh sinh động, tạo ra game và hoạt ảnh thú vị đầu tay của chính bạn.',
-      icon: '🧩',
-      color: 'var(--steam-art)'
+      image: 'https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=600&h=340&fit=crop&q=80',
+      tag: 'Beginner',
+      tagColor: 'var(--kid-green)',
     },
     {
       id: 2,
       title: '🌐 Lập Trình Web',
       description: 'Xây dựng website thực tế với HTML, CSS và JavaScript. Nắm bắt các phương pháp thiết kế Web hiện đại và chuẩn Responsive.',
-      icon: '💻',
-      color: 'var(--steam-tech)'
+      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=340&fit=crop&q=80',
+      tag: 'Intermediate',
+      tagColor: 'var(--steam-tech)',
     },
     {
       id: 3,
-      title: '🤖 Thiết Kế Game 3D',
-      description: 'Học cách xây dựng thế giới ảo, lập trình logic và phát triển trò chơi 3D hoàn chỉnh cùng với đa dạng các nền tảng Engine.',
-      icon: '🎲',
-      color: 'var(--steam-science)'
+      title: '🤖 Robotics & Game 3D',
+      description: 'Học cách lắp ráp robot, lập trình logic và phát triển trò chơi 3D hoàn chỉnh cùng với đa dạng các nền tảng Engine.',
+      image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=340&fit=crop&q=80',
+      tag: 'Advanced',
+      tagColor: 'var(--steam-engineering)',
     }
   ]
 
@@ -38,21 +41,28 @@ const Course = () => {
         <div className="course-grid">
           {courses.map(course => (
             <div className="course-card" key={course.id}>
-              <div 
-                className="course-icon-wrapper" 
-                style={{ background: `linear-gradient(135deg, ${course.color}22, ${course.color}55)` }}
-              >
-                <span className="course-icon">{course.icon}</span>
+              <div className="course-image-wrapper">
+                <img 
+                  src={course.image} 
+                  alt={course.title} 
+                  className="course-image"
+                  loading="lazy"
+                />
+                <span className="course-tag" style={{ backgroundColor: course.tagColor }}>
+                  {course.tag}
+                </span>
               </div>
-              <h3 className="course-title">{course.title}</h3>
-              <p className="course-desc">{course.description}</p>
-              <button className="course-btn">
-                Tìm hiểu thêm
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
+              <div className="course-body">
+                <h3 className="course-title">{course.title}</h3>
+                <p className="course-desc">{course.description}</p>
+                <button className="course-btn">
+                  Tìm hiểu thêm
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
           ))}
         </div>
