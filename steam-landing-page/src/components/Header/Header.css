@@ -5,7 +5,7 @@
   width: 100%;
   background-color: rgba(255, 253, 247, 0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 2px 12px rgba(255, 184, 0, 0.12);
+  box-shadow: 0 2px 12px rgba(6, 214, 160, 0.12);
   z-index: 1000;
   transition: var(--transition-normal);
 }
@@ -36,7 +36,7 @@
 }
 
 .logo-steam {
-  background: linear-gradient(135deg, var(--kid-yellow), var(--kid-orange), var(--steam-engineering));
+  background: linear-gradient(135deg, var(--fresh-green), var(--fresh-blue), var(--steam-engineering));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -63,8 +63,8 @@
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--kid-orange);
-  background-color: rgba(255, 107, 53, 0.08);
+  color: var(--fresh-blue);
+  background-color: rgba(0, 180, 216, 0.08);
 }
 
 .nav-link::after {
@@ -75,7 +75,7 @@
   transform: translateX(-50%);
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--kid-yellow), var(--kid-orange));
+  background: linear-gradient(90deg, var(--fresh-green), var(--fresh-blue));
   border-radius: var(--radius-pill);
   transition: width var(--transition-fast);
 }
@@ -100,7 +100,7 @@
 .hamburger .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--kid-orange);
+  background-color: var(--fresh-blue);
   border-radius: 3px;
   transition: all 0.3s ease;
 }
@@ -135,7 +135,7 @@
     max-width: 300px;
     height: 100vh;
     background-color: var(--bg-main);
-    box-shadow: -5px 0 20px rgba(255, 184, 0, 0.15);
+    box-shadow: -5px 0 20px rgba(6, 214, 160, 0.15);
     transition: right 0.3s ease;
     padding-top: 5rem;
     z-index: 1050;

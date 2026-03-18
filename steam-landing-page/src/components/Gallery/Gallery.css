@@ -51,7 +51,7 @@
   overflow: hidden;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  border: 2px solid rgba(255, 184, 0, 0.08);
+  border: 2px solid rgba(6, 214, 160, 0.08);
   transition: all 0.4s ease;
 }
 
@@ -60,8 +60,8 @@
 }
 
 .gallery-item:hover {
-  box-shadow: 0 12px 28px rgba(255, 184, 0, 0.15);
-  border-color: rgba(255, 184, 0, 0.2);
+  box-shadow: 0 12px 28px rgba(6, 214, 160, 0.15);
+  border-color: rgba(6, 214, 160, 0.2);
 }
 
 .gallery-image {

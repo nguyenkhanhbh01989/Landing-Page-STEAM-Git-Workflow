@@ -11,7 +11,7 @@
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 184, 0, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(6, 214, 160, 0.06) 0%, transparent 70%);
   top: 40px;
   left: -60px;
   z-index: 0;
@@ -59,13 +59,13 @@
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
-  border: 2px solid rgba(255, 184, 0, 0.08);
+  border: 2px solid rgba(6, 214, 160, 0.08);
 }
 
 .testimonial-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 36px rgba(255, 184, 0, 0.12);
-  border-color: rgba(255, 184, 0, 0.2);
+  box-shadow: 0 16px 36px rgba(6, 214, 160, 0.12);
+  border-color: rgba(6, 214, 160, 0.2);
   animation: bouncy 0.5s ease;
 }
 
@@ -75,7 +75,7 @@
   left: 2rem;
   font-size: 4rem;
   font-family: Georgia, serif;
-  color: rgba(255, 184, 0, 0.2);
+  color: rgba(6, 214, 160, 0.2);
   line-height: 1;
 }
 
@@ -102,8 +102,8 @@
   height: 56px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--kid-yellow);
-  box-shadow: 0 4px 12px rgba(255, 184, 0, 0.25);
+  border: 3px solid var(--fresh-green);
+  box-shadow: 0 4px 12px rgba(6, 214, 160, 0.25);
 }
 
 .testimonial-info {
@@ -120,7 +120,7 @@
 
 .testimonial-role {
   font-size: 0.875rem;
-  color: var(--kid-orange);
+  color: var(--fresh-blue);
   font-weight: 700;
 }
 
