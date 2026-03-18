@@ -1,0 +1,163 @@
+.course-section {
+  padding: 6rem 2rem;
+  background-color: var(--bg-main);
+  position: relative;
+}
+
+.course-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.course-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.course-subheading {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* --- Card UI --- */
+.course-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--color-gray-200);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover Effect */
+.course-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+/* Gradient line top on hover */
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--steam-science), var(--steam-tech), var(--steam-art));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.course-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* --- Card Content --- */
+.course-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.course-icon {
+  font-size: 2.5rem;
+}
+
+.course-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.course-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+}
+
+/* --- Card Button --- */
+.course-btn {
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--steam-tech);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  transition: gap 0.3s ease, color 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.course-btn:hover {
+  gap: 0.875rem;
+  color: var(--steam-art);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .course-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .course-heading {
+    font-size: 2rem;
+  }
+  
+  .course-section {
+    padding: 4rem 2rem;
+  }
+}
