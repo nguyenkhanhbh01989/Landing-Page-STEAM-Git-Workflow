@@ -25,7 +25,7 @@ const Header = () => {
             <li className="nav-item"><a href="#home" className="nav-link active" onClick={() => setMenuOpen(false)}>🏠 Trang chủ</a></li>
             <li className="nav-item"><a href="#courses" className="nav-link" onClick={() => setMenuOpen(false)}>📚 Khóa học</a></li>
             <li className="nav-item"><a href="#reviews" className="nav-link" onClick={() => setMenuOpen(false)}>⭐ Đánh giá</a></li>
-            <li className="nav-item"><a href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>📩 Liên hệ</a></li>
+            <li className="nav-item"><a href="#register-form" className="nav-link" onClick={() => setMenuOpen(false)}>📩 Liên hệ</a></li>
           </ul>
         </nav>
       </div>

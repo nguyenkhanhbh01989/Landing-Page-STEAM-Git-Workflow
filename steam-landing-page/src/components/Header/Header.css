@@ -20,18 +20,19 @@
 }
 
 .logo {
-  font-size: 1.85rem;
+  font-size: 2.5rem;
   font-weight: 900;
   color: var(--text-primary);
   letter-spacing: -0.5px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 180, 216, 0.25));
 }
 
 .logo-emoji {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   animation: wiggle 2s ease-in-out infinite;
 }
 
